@@ -1,15 +1,16 @@
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 
-type ButtonProps = {
+interface ButtonProps {
   children: React.ReactNode;
   variant?: "primary" | "secondary" | "ghost";
   size?: "sm" | "md" | "lg";
   href?: string;
   className?: string;
-  onClick?: () => void;
-  type?: "button" | "submit";
-};
+  onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
+  type?: "button" | "submit" | "reset";
+  disabled?: boolean;
+}
 
 const baseClasses =
   "inline-flex items-center justify-center rounded-xl font-medium transition-all duration-200";
@@ -37,6 +38,7 @@ export default function Button({
   className,
   onClick,
   type = "button",
+  disabled = false,
 }: ButtonProps) {
   const classes = cn(
     baseClasses,
@@ -54,7 +56,15 @@ export default function Button({
   }
 
   return (
-    <button type={type} onClick={onClick} className={classes}>
+    <button
+      type={type}
+      onClick={onClick}
+      disabled={disabled}
+      className={cn(
+        classes,
+        disabled && "pointer-events-none opacity-50"
+      )}
+    >
       {children}
     </button>
   );
