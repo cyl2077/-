@@ -23,11 +23,11 @@ export async function getAllProjects(): Promise<Omit<Project, "contentHtml">[]> 
         slug,
         title: data.title || slug,
         description: data.description || "",
-        tech: data.tech || [],
+        tech: Array.isArray(data.tech) ? data.tech : [],
         image: data.image || "",
         demoUrl: data.demoUrl || undefined,
         repoUrl: data.repoUrl || undefined,
-        order: data.order || 999,
+        order: data.order ?? 999,
       };
     })
     .sort((a, b) => a.order - b.order);
@@ -50,11 +50,11 @@ export async function getProjectBySlug(
     slug,
     title: data.title || slug,
     description: data.description || "",
-    tech: data.tech || [],
+    tech: Array.isArray(data.tech) ? data.tech : [],
     image: data.image || "",
     demoUrl: data.demoUrl || undefined,
     repoUrl: data.repoUrl || undefined,
-    order: data.order || 999,
+    order: data.order ?? 999,
     contentHtml: processed.toString(),
   };
 }

@@ -31,14 +31,19 @@ export async function getAllBlogPosts(): Promise<
         slug,
         title: data.title || slug,
         date: data.date || "",
-        tags: data.tags || [],
+        tags: Array.isArray(data.tags) ? data.tags : [],
         description: data.description || "",
         readingTime: calculateReadingTime(content),
       };
     })
-    .sort(
-      (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
-    );
+    .sort((a, b) => {
+      const dateA = new Date(a.date || "").getTime();
+      const dateB = new Date(b.date || "").getTime();
+      if (isNaN(dateA) && isNaN(dateB)) return 0;
+      if (isNaN(dateA)) return 1;
+      if (isNaN(dateB)) return -1;
+      return dateB - dateA;
+    });
 
   return posts;
 }
