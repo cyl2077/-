@@ -9,7 +9,7 @@ export default function Hero() {
         <div className="max-w-2xl">
           <p className="mb-4 font-mono text-sm text-accent">Hi, I&apos;m</p>
           <h1 className="mb-6 text-5xl font-bold tracking-tight md:text-6xl lg:text-7xl">
-            Your Name
+            陈辉
           </h1>
           <h2 className="mb-6 text-xl text-stone-500 dark:text-stone-400 md:text-2xl">
             Full-stack developer crafting thoughtful digital experiences

@@ -1,7 +1,7 @@
 import Container from "@/components/ui/Container";
 import Section from "@/components/ui/Section";
 import ContactForm from "@/components/sections/ContactForm";
-import { Github, Linkedin, Mail, MapPin } from "lucide-react";
+import { Github, Mail, Phone } from "lucide-react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -23,38 +23,30 @@ export default function ContactPage() {
         <div className="grid gap-12 md:grid-cols-5">
           <div className="space-y-6 md:col-span-2">
             <div>
-              <h3 className="mb-4 text-lg font-semibold">Reach me at</h3>
+              <h3 className="mb-4 text-lg font-semibold">联系方式</h3>
               <div className="space-y-3 text-sm text-stone-600 dark:text-stone-400">
                 <a
-                  href="mailto:your@email.com"
+                  href="mailto:1256312530@qq.com"
                   className="flex items-center gap-2 hover:text-accent transition-colors"
                 >
-                  <Mail size={16} /> your@email.com
+                  <Mail size={16} /> 1256312530@qq.com
                 </a>
                 <span className="flex items-center gap-2">
-                  <MapPin size={16} /> Your Location
+                  <Phone size={16} /> 19304063394
                 </span>
               </div>
             </div>
 
             <div>
-              <h3 className="mb-4 text-lg font-semibold">Elsewhere</h3>
+              <h3 className="mb-4 text-lg font-semibold">其他平台</h3>
               <div className="space-y-3 text-sm text-stone-600 dark:text-stone-400">
                 <a
-                  href="https://github.com/your-username"
+                  href="https://github.com/cyl2077"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 hover:text-accent transition-colors"
                 >
                   <Github size={16} /> GitHub
-                </a>
-                <a
-                  href="https://linkedin.com/in/your-username"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 hover:text-accent transition-colors"
-                >
-                  <Linkedin size={16} /> LinkedIn
                 </a>
               </div>
             </div>

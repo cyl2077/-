@@ -17,8 +17,8 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Your Name — Full-Stack Developer",
-    template: "%s | Your Name",
+    default: "陈辉 — Full-Stack Developer",
+    template: "%s | 陈辉",
   },
   description:
     "Personal website of a full-stack developer. Portfolio, blog, and more.",

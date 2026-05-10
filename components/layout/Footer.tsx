@@ -1,14 +1,9 @@
 import Container from "@/components/ui/Container";
-import { Github, Linkedin, Mail } from "lucide-react";
+import { Github, Mail } from "lucide-react";
 
 const socials = [
-  { href: "https://github.com/your-username", icon: Github, label: "GitHub" },
-  {
-    href: "https://linkedin.com/in/your-username",
-    icon: Linkedin,
-    label: "LinkedIn",
-  },
-  { href: "mailto:your@email.com", icon: Mail, label: "Email" },
+  { href: "https://github.com/cyl2077", icon: Github, label: "GitHub" },
+  { href: "mailto:1256312530@qq.com", icon: Mail, label: "Email" },
 ];
 
 export default function Footer() {
@@ -17,7 +12,7 @@ export default function Footer() {
       <Container>
         <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
           <p className="text-sm text-stone-500">
-            &copy; {new Date().getFullYear()} Your Name. All rights reserved.
+            &copy; {new Date().getFullYear()} 陈辉. All rights reserved.
           </p>
           <div className="flex items-center gap-4">
             {socials.map(({ href, icon: Icon, label }) => {

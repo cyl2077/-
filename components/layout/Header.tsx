@@ -50,7 +50,7 @@ export default function Header() {
             href="/"
             className="text-lg font-semibold tracking-tight hover:text-accent transition-colors"
           >
-            Your Name
+            陈辉
           </Link>
 
           {/* Desktop nav */}
