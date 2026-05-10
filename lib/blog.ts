@@ -63,7 +63,7 @@ export async function getBlogPostBySlug(
     slug,
     title: data.title || slug,
     date: data.date || "",
-    tags: data.tags || [],
+    tags: Array.isArray(data.tags) ? data.tags : [],
     description: data.description || "",
     readingTime: calculateReadingTime(content),
     contentHtml: processed.toString(),
