@@ -6,8 +6,8 @@ tech:
   - CSS
   - JavaScript
 image: ""
-demoUrl: ""
-repoUrl: https://github.com/cyl2077/-
+demoUrl: https://puzzle-games.vercel.app
+repoUrl: https://github.com/cyl2077/puzzle-games
 order: 0
 ---
 
