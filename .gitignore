@@ -1,1 +1,3 @@
-adc821
+node_modules/
+.next/
+out/
