@@ -6,7 +6,7 @@ tech:
   - CSS
   - JavaScript
 image: ""
-demoUrl: https://puzzle-games.vercel.app
+demoUrl: https://www.chhh2077.dedyn.io/
 repoUrl: https://github.com/cyl2077/puzzle-games
 order: 0
 ---
