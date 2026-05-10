@@ -8,10 +8,29 @@
   }
 
   body {
-    @apply bg-warm text-gray-900 antialiased;
+    @apply bg-stone-50 text-stone-900 antialiased transition-colors;
   }
 
   .dark body {
-    @apply bg-gray-950 text-gray-100;
+    @apply bg-stone-950 text-stone-100;
+  }
+
+  ::selection {
+    @apply bg-accent/20;
+  }
+}
+
+@layer components {
+  .link-underline {
+    @apply relative inline-block;
+  }
+
+  .link-underline::after {
+    content: "";
+    @apply absolute bottom-0 left-0 h-[1.5px] w-0 bg-accent transition-all duration-300;
+  }
+
+  .link-underline:hover::after {
+    @apply w-full;
   }
 }

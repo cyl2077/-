@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
+import { ThemeProvider } from "@/components/layout/ThemeProvider";
 import "./globals.css";
 
 const inter = Inter({
@@ -33,7 +34,9 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className="flex min-h-screen flex-col font-sans">
-        <main className="flex-1">{children}</main>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <main className="flex-1">{children}</main>
+        </ThemeProvider>
       </body>
     </html>
   );
