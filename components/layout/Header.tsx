@@ -5,14 +5,16 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import Container from "@/components/ui/Container";
 import ThemeToggle from "@/components/layout/ThemeToggle";
+import LanguageToggle from "@/components/layout/LanguageToggle";
+import { T } from "@/lib/i18n";
 import { Menu, X } from "lucide-react";
 
 const links = [
-  { href: "/", label: "Home" },
-  { href: "/projects", label: "Projects" },
-  { href: "/blog", label: "Blog" },
-  { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact" },
+  { href: "/", zh: "首页", en: "Home" },
+  { href: "/projects", zh: "项目", en: "Projects" },
+  { href: "/blog", zh: "博客", en: "Blog" },
+  { href: "/about", zh: "关于", en: "About" },
+  { href: "/contact", zh: "联系", en: "Contact" },
 ];
 
 export default function Header() {
@@ -55,7 +57,7 @@ export default function Header() {
 
           {/* Desktop nav */}
           <div className="hidden items-center gap-6 md:flex">
-            {links.map(({ href, label }) => (
+            {links.map(({ href, zh, en }) => (
               <Link
                 key={href}
                 href={href}
@@ -65,19 +67,21 @@ export default function Header() {
                     : "text-stone-600 hover:text-stone-900 dark:text-stone-400 dark:hover:text-stone-100"
                 }`}
               >
-                {label}
+                <T zh={zh} en={en} />
               </Link>
             ))}
+            <LanguageToggle />
             <ThemeToggle />
           </div>
 
           {/* Mobile toggle */}
           <div className="flex items-center gap-2 md:hidden">
+            <LanguageToggle />
             <ThemeToggle />
             <button
               onClick={() => setMenuOpen(!menuOpen)}
               className="rounded-lg p-2 text-stone-600 hover:bg-stone-100 dark:text-stone-400 dark:hover:bg-stone-800"
-              aria-label="Toggle menu"
+              aria-label="切换菜单"
               aria-expanded={menuOpen}
             >
               {menuOpen ? <X size={20} /> : <Menu size={20} />}
@@ -88,7 +92,7 @@ export default function Header() {
         {/* Mobile menu */}
         {menuOpen && (
           <div className="border-t border-stone-200 py-4 dark:border-stone-800 md:hidden">
-            {links.map(({ href, label }) => (
+            {links.map(({ href, zh, en }) => (
               <Link
                 key={href}
                 href={href}
@@ -99,7 +103,7 @@ export default function Header() {
                     : "text-stone-600 dark:text-stone-400"
                 }`}
               >
-                {label}
+                <T zh={zh} en={en} />
               </Link>
             ))}
           </div>

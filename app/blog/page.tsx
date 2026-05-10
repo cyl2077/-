@@ -2,12 +2,13 @@ import Container from "@/components/ui/Container";
 import Section from "@/components/ui/Section";
 import BlogCard from "@/components/sections/BlogCard";
 import TagFilter from "@/components/sections/TagFilter";
+import { T } from "@/lib/i18n";
 import { getAllBlogPosts, getAllBlogTags } from "@/lib/blog";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Blog",
-  description: "Thoughts on development, design, and technology",
+  title: "博客",
+  description: "关于开发、设计和技术的思考",
 };
 
 export default async function BlogPage({
@@ -36,9 +37,11 @@ export default async function BlogPage({
     <Section>
       <Container>
         <div className="mb-12">
-          <h1 className="text-4xl font-bold">Blog</h1>
+          <h1 className="text-4xl font-bold">
+            <T zh="博客" en="Blog" />
+          </h1>
           <p className="mt-3 text-stone-600 dark:text-stone-400">
-            Thoughts on development, design, and technology
+            <T zh="关于开发、设计和技术的思考" en="Thoughts on development, design, and technology" />
           </p>
         </div>
 
@@ -48,7 +51,7 @@ export default async function BlogPage({
 
         {filteredPosts.length === 0 ? (
           <p className="py-12 text-center text-stone-500">
-            No posts matching these tags.
+            <T zh="没有匹配该标签的文章。" en="No posts matching these tags." />
           </p>
         ) : (
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">

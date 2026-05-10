@@ -1,4 +1,5 @@
 import Container from "@/components/ui/Container";
+import { T } from "@/lib/i18n";
 import { Github, Mail } from "lucide-react";
 
 const socials = [
@@ -12,7 +13,7 @@ export default function Footer() {
       <Container>
         <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
           <p className="text-sm text-stone-500">
-            &copy; {new Date().getFullYear()} 陈辉. All rights reserved.
+            &copy; {new Date().getFullYear()} 陈辉. <T zh="保留所有权利。" en="All rights reserved." />
           </p>
           <div className="flex items-center gap-4">
             {socials.map(({ href, icon: Icon, label }) => {

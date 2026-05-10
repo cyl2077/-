@@ -3,6 +3,7 @@
 import Container from "@/components/ui/Container";
 import Section from "@/components/ui/Section";
 import Tag from "@/components/ui/Tag";
+import { T } from "@/lib/i18n";
 import { motion } from "framer-motion";
 
 const skills = [
@@ -16,7 +17,7 @@ export default function SkillTags() {
     <Section className="border-t border-stone-200 dark:border-stone-800">
       <Container>
         <h2 className="mb-8 text-center text-2xl font-bold">
-          Technologies I work with
+          <T zh="技术栈" en="Technologies I work with" />
         </h2>
         <div className="flex flex-wrap justify-center gap-3">
           {skills.map((skill, i) => (

@@ -5,6 +5,7 @@ import Container from "@/components/ui/Container";
 import Section from "@/components/ui/Section";
 import BlogCard from "@/components/sections/BlogCard";
 import Button from "@/components/ui/Button";
+import { T } from "@/lib/i18n";
 import { ArrowRight } from "lucide-react";
 import { getAllBlogPosts } from "@/lib/blog";
 
@@ -23,13 +24,15 @@ export default async function Home() {
           <Container>
             <div className="mb-12 flex items-end justify-between">
               <div>
-                <h2 className="text-2xl font-bold">Latest Posts</h2>
+                <h2 className="text-2xl font-bold">
+                  <T zh="最新文章" en="Latest Posts" />
+                </h2>
                 <p className="mt-2 text-stone-600 dark:text-stone-400">
-                  Thoughts on development and design
+                  <T zh="关于开发和设计的思考" en="Thoughts on development and design" />
                 </p>
               </div>
               <Button href="/blog" variant="ghost">
-                View All <ArrowRight size={16} />
+                <T zh="查看全部" en="View All" /> <ArrowRight size={16} />
               </Button>
             </div>
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">

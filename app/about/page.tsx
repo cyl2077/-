@@ -1,11 +1,12 @@
 import Container from "@/components/ui/Container";
 import Section from "@/components/ui/Section";
 import Timeline from "@/components/sections/Timeline";
+import { T } from "@/lib/i18n";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About",
-  description: "My background, experience, and what drives me",
+  title: "关于",
+  description: "我的背景、经历和驱动力",
 };
 
 const experience = [
@@ -40,28 +41,38 @@ export default function AboutPage() {
     <Section>
       <Container>
         <div className="mb-12">
-          <h1 className="text-4xl font-bold">About Me</h1>
+          <h1 className="text-4xl font-bold">
+            <T zh="关于我" en="About Me" />
+          </h1>
         </div>
 
         <div className="grid gap-12 lg:grid-cols-5">
           <div className="lg:col-span-2">
             <div className="prose prose-stone dark:prose-invert">
               <p>
-                I&apos;m a full-stack developer passionate about building tools
-                that make people more productive. I care deeply about
-                performance, accessibility, and clean architecture.
+                <T
+                  zh="我是一名全栈开发者，热衷于构建提高效率的工具。我非常注重性能、可访问性和清晰的架构。"
+                  en="I'm a full-stack developer passionate about building tools that make people more productive. I care deeply about performance, accessibility, and clean architecture."
+                />
               </p>
               <p>
-                When I&apos;m not coding, you&apos;ll find me reading about
-                systems design, contributing to open source, or exploring the
-                outdoors.
+                <T
+                  zh="工作之余，我喜欢阅读系统设计相关内容、参与开源项目、探索户外。"
+                  en="When I'm not coding, you'll find me reading about systems design, contributing to open source, or exploring the outdoors."
+                />
               </p>
             </div>
           </div>
 
           <div className="space-y-12 lg:col-span-3">
-            <Timeline items={experience} title="Experience" />
-            <Timeline items={education} title="Education" />
+            <Timeline
+              items={experience}
+              title={<T zh="工作经历" en="Experience" />}
+            />
+            <Timeline
+              items={education}
+              title={<T zh="教育背景" en="Education" />}
+            />
           </div>
         </div>
       </Container>

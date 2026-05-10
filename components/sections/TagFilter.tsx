@@ -1,6 +1,7 @@
 "use client";
 
 import Tag from "@/components/ui/Tag";
+import { T } from "@/lib/i18n";
 import { useRouter, useSearchParams } from "next/navigation";
 
 interface TagFilterProps {
@@ -34,7 +35,7 @@ export default function TagFilter({ tags, selectedTags }: TagFilterProps) {
         active={selectedTags.length === 0}
         onClick={() => router.push("/blog")}
       >
-        All
+        <T zh="全部" en="All" />
       </Tag>
       {tags.map((tag) => (
         <Tag

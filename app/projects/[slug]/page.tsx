@@ -2,6 +2,7 @@ import Container from "@/components/ui/Container";
 import Section from "@/components/ui/Section";
 import Tag from "@/components/ui/Tag";
 import Button from "@/components/ui/Button";
+import { T } from "@/lib/i18n";
 import { getProjectBySlug, getAllProjectSlugs } from "@/lib/projects";
 import { ExternalLink, Github, ArrowLeft } from "lucide-react";
 import Link from "next/link";
@@ -39,7 +40,7 @@ export default async function ProjectPage({
           href="/projects"
           className="mb-8 inline-flex items-center gap-1 text-sm text-stone-500 hover:text-accent transition-colors"
         >
-          <ArrowLeft size={16} /> Back to Projects
+          <ArrowLeft size={16} /> <T zh="返回项目列表" en="Back to Projects" />
         </Link>
 
         <article className="max-w-3xl">
@@ -57,12 +58,12 @@ export default async function ProjectPage({
           <div className="mb-8 flex gap-4">
             {project.demoUrl && (
               <Button href={project.demoUrl}>
-                <ExternalLink size={16} /> Live Demo
+                <ExternalLink size={16} /> <T zh="在线演示" en="Live Demo" />
               </Button>
             )}
             {project.repoUrl && (
               <Button href={project.repoUrl} variant="secondary">
-                <Github size={16} /> Source Code
+                <Github size={16} /> <T zh="源代码" en="Source Code" />
               </Button>
             )}
           </div>

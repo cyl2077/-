@@ -2,6 +2,7 @@ import Container from "@/components/ui/Container";
 import Section from "@/components/ui/Section";
 import Button from "@/components/ui/Button";
 import ProjectCard from "@/components/sections/ProjectCard";
+import { T } from "@/lib/i18n";
 import { ArrowRight } from "lucide-react";
 import { getAllProjects } from "@/lib/projects";
 
@@ -16,13 +17,15 @@ export default async function FeaturedProjects() {
       <Container>
         <div className="mb-12 flex items-end justify-between">
           <div>
-            <h2 className="text-2xl font-bold">Featured Projects</h2>
+            <h2 className="text-2xl font-bold">
+              <T zh="精选项目" en="Featured Projects" />
+            </h2>
             <p className="mt-2 text-stone-600 dark:text-stone-400">
-              A selection of recent work
+              <T zh="近期作品精选" en="A selection of recent work" />
             </p>
           </div>
           <Button href="/projects" variant="ghost">
-            View All <ArrowRight size={16} />
+            <T zh="查看全部" en="View All" /> <ArrowRight size={16} />
           </Button>
         </div>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">

@@ -9,7 +9,7 @@ interface TimelineItem {
 
 interface TimelineProps {
   items: TimelineItem[];
-  title: string;
+  title: React.ReactNode;
 }
 
 export default function Timeline({ items, title }: TimelineProps) {

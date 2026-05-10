@@ -1,7 +1,9 @@
 import Container from "@/components/ui/Container";
 import Section from "@/components/ui/Section";
 import Tag from "@/components/ui/Tag";
+import LocaleDate from "@/components/ui/LocaleDate";
 import { getBlogPostBySlug, getAllBlogSlugs } from "@/lib/blog";
+import { T } from "@/lib/i18n";
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -38,21 +40,17 @@ export default async function BlogPostPage({
           href="/blog"
           className="mb-8 inline-flex items-center gap-1 text-sm text-stone-500 hover:text-accent transition-colors"
         >
-          <ArrowLeft size={16} /> Back to Blog
+          <ArrowLeft size={16} /> <T zh="返回博客" en="Back to Blog" />
         </Link>
 
         <article className="mx-auto max-w-2xl">
           <header className="mb-8">
             <h1 className="mb-4 text-4xl font-bold">{post.title}</h1>
             <div className="flex items-center gap-4 text-sm text-stone-500">
-              <time dateTime={post.date}>
-                {new Date(post.date).toLocaleDateString("en-US", {
-                  year: "numeric",
-                  month: "long",
-                  day: "numeric",
-                })}
-              </time>
-              <span>{post.readingTime} min read</span>
+              <LocaleDate date={post.date} />
+              <span>
+                <T zh={`${post.readingTime} 分钟阅读`} en={`${post.readingTime} min read`} />
+              </span>
             </div>
             <div className="mt-4 flex flex-wrap gap-2">
               {post.tags.map((tag) => (

@@ -1,5 +1,7 @@
 import Card from "@/components/ui/Card";
 import Tag from "@/components/ui/Tag";
+import LocaleDate from "@/components/ui/LocaleDate";
+import { T } from "@/lib/i18n";
 import Link from "next/link";
 
 interface BlogCardProps {
@@ -28,14 +30,13 @@ export default function BlogCard({
         {title}
       </Link>
       <div className="mb-2 flex items-center gap-3 text-xs text-stone-500">
-        <time dateTime={date}>
-          {new Date(date).toLocaleDateString("en-US", {
-            year: "numeric",
-            month: "long",
-            day: "numeric",
-          })}
-        </time>
-        <span>{readingTime} min read</span>
+        <LocaleDate date={date} />
+        <span>
+          <T
+            zh={`${readingTime} 分钟阅读`}
+            en={`${readingTime} min read`}
+          />
+        </span>
       </div>
       <p className="mb-3 text-sm text-stone-600 dark:text-stone-400">
         {description}

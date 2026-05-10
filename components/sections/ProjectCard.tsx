@@ -1,5 +1,6 @@
 import Card from "@/components/ui/Card";
 import Tag from "@/components/ui/Tag";
+import { T } from "@/lib/i18n";
 import Link from "next/link";
 import { ExternalLink, Github } from "lucide-react";
 
@@ -45,7 +46,7 @@ export default function ProjectCard({
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1 text-accent hover:underline"
             >
-              <ExternalLink size={14} /> Demo
+              <ExternalLink size={14} /> <T zh="演示" en="Demo" />
             </a>
           )}
           {repoUrl && (
@@ -55,7 +56,7 @@ export default function ProjectCard({
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1 text-stone-500 hover:text-accent transition-colors"
             >
-              <Github size={14} /> Code
+              <Github size={14} /> <T zh="源码" en="Code" />
             </a>
           )}
         </div>

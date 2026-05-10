@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Button from "@/components/ui/Button";
+import { T } from "@/lib/i18n";
 import { Send, CheckCircle, AlertCircle } from "lucide-react";
 
 export default function ContactForm() {
@@ -38,9 +39,11 @@ export default function ContactForm() {
     return (
       <div className="flex flex-col items-center gap-4 rounded-2xl border border-stone-200 bg-white p-12 text-center dark:border-stone-800 dark:bg-stone-900">
         <CheckCircle className="h-12 w-12 text-accent" />
-        <h3 className="text-xl font-semibold">Message sent!</h3>
+        <h3 className="text-xl font-semibold">
+          <T zh="消息已发送！" en="Message sent!" />
+        </h3>
         <p className="text-stone-600 dark:text-stone-400">
-          Thank you for reaching out. I&apos;ll get back to you soon.
+          <T zh="感谢你的来信，我会尽快回复。" en="Thank you for reaching out. I'll get back to you soon." />
         </p>
       </div>
     );
@@ -56,7 +59,7 @@ export default function ContactForm() {
           htmlFor="name"
           className="mb-1 block text-sm font-medium"
         >
-          Name
+          <T zh="姓名" en="Name" />
         </label>
         <input
           id="name"
@@ -75,7 +78,7 @@ export default function ContactForm() {
           htmlFor="email"
           className="mb-1 block text-sm font-medium"
         >
-          Email
+          <T zh="邮箱" en="Email" />
         </label>
         <input
           id="email"
@@ -94,7 +97,7 @@ export default function ContactForm() {
           htmlFor="message"
           className="mb-1 block text-sm font-medium"
         >
-          Message
+          <T zh="留言" en="Message" />
         </label>
         <textarea
           id="message"
@@ -111,16 +114,16 @@ export default function ContactForm() {
       {status === "error" && (
         <div className="flex items-center gap-2 rounded-lg bg-red-50 p-3 text-sm text-red-600 dark:bg-red-900/20 dark:text-red-400">
           <AlertCircle size={16} />
-          Something went wrong. Please try again.
+          <T zh="发送失败，请重试。" en="Something went wrong. Please try again." />
         </div>
       )}
 
       <Button type="submit" disabled={status === "sending"} className="w-full">
         {status === "sending" ? (
-          "Sending..."
+          <T zh="发送中..." en="Sending..." />
         ) : (
           <>
-            <Send size={16} /> Send Message
+            <Send size={16} /> <T zh="发送消息" en="Send Message" />
           </>
         )}
       </Button>
