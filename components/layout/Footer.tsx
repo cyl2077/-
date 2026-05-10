@@ -20,18 +20,22 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} Your Name. All rights reserved.
           </p>
           <div className="flex items-center gap-4">
-            {socials.map(({ href, icon: Icon, label }) => (
-              <a
-                key={label}
-                href={href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-stone-400 hover:text-accent transition-colors"
-                aria-label={label}
-              >
-                <Icon size={20} />
-              </a>
-            ))}
+            {socials.map(({ href, icon: Icon, label }) => {
+              const isExternal = !href.startsWith("mailto:");
+              return (
+                <a
+                  key={label}
+                  href={href}
+                  {...(isExternal
+                    ? { target: "_blank", rel: "noopener noreferrer" }
+                    : {})}
+                  className="text-stone-400 hover:text-accent transition-colors"
+                  aria-label={label}
+                >
+                  <Icon size={20} />
+                </a>
+              );
+            })}
           </div>
         </div>
       </Container>
