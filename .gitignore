@@ -4,3 +4,5 @@ out/
 puzzle-games/
 taobao-review-gallery/
 *.tsbuildinfo
+
+.vercel
